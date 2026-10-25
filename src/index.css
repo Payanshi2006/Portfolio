@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: #FAF8F5;
+    color: #292524;
+    overflow-x: hidden;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #FAF8F5;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #DDD4C8;
+    border-radius: 4px;
+    border: 2px solid #FAF8F5;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #9C5369;
+  }
+}
+
+@layer utilities {
+  /* Prevent sticky navbar from cutting off headings */
+  .section-anchor {
+    scroll-margin-top: 5.5rem;
+  }
+
+  /* Editorial subtle drop caps */
+  .editorial-dropcap::first-letter {
+    float: left;
+    font-family: 'Newsreader', serif;
+    font-size: 3.5rem;
+    line-height: 0.85;
+    padding-right: 0.6rem;
+    padding-top: 0.15rem;
+    color: #9C5369;
+    font-weight: 600;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
